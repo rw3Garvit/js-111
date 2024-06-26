@@ -6,7 +6,19 @@
     <title>Document</title>
   </head>
   <body>
+    <input type="text" id="id" />
+    <input type="text" id="productName" />
+    <input type="text" id="price" />
+    <button onclick="submit()">Submit</button>
+
     <script>
+      let products = [
+        {
+          id: 1,
+          productName: "watch",
+          price: 19,
+        },
+      ];
       //   console.log(localStorage);
 
       //   localStorage.setItem("name", "garvit");
@@ -20,12 +32,31 @@
       //   console.log(name, "from storage");
       //   console.log(age);
 
-      let arr = [1, 2, 3, 4];
+      //   let arr = [1, 2, 3, 4];
 
-      localStorage.setItem("data", JSON.stringify(arr));
+      //   localStorage.setItem("data", JSON.stringify(arr));
 
-      let result = JSON.parse(localStorage.getItem("data"));
-      console.log(result);
+      //   let result = JSON.parse(localStorage.getItem("data"));
+      //   console.log(result);
+      console.log(products);
+
+      function submit() {
+        let id = document.getElementById("id").value;
+        let productName = document.getElementById("productName").value;
+        let price = document.getElementById("price").value;
+
+        let product = {
+          id,
+          productName,
+          price,
+        };
+
+        console.log(product);
+
+        products.push(product);
+
+        console.log(products);
+      }
     </script>
   </body>
 </html>
