@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <form action=""> -->
+    <input type="text" id="username" />
+    <input type="password" id="password" />
+    <p id="err"></p>
+    <p id="err2"></p>
+    <button onclick="submit()">submit</button>
+    <!-- </form> -->
+
+    <script>
+      let name = "neha";
+      let password = "12345";
+      function submit() {
+        let username = document.getElementById("username").value;
+        let password = document.getElementById("password").value;
+        console.log(username);
+        console.log(password);
+        if (username == "" || username != "neha") {
+          document.getElementById("err").innerHTML = "enter our valid username";
+          document.getElementById("err").style.color = "red";
+        } else {
+          document.getElementById("err").innerHTML = username;
+          document.getElementById("err").style.backgroundColor = "red";
+        }
+        if (password == "" || password.length < 6) {
+          document.getElementById("err2").innerHTML =
+            "enter our valid password";
+          document.getElementById("err2").style.color = "red";
+        } else {
+          document.getElementById("err2").innerHTML = password;
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   let obj = {
+      //     name: "garvit",
+      //     age: 22,
+      //     mobile: "12355",
+      //   };
+
+      //   obj.email = "garvit@gmail.com";
+      //   obj.name = "user";
+
+      //   console.log(obj.age);
+      //   console.log(obj.name);
+      //   console.log(obj["name"]);
+
+      let arr = [
+        {
+          name: "garvit",
+          age: 22,
+          mobile: "12355",
+        },
+        {
+          name: "john",
+          age: 22,
+          mobile: "12355",
+        },
+        {
+          name: "user",
+          age: 22,
+          mobile: "12355",
+        },
+        {
+          name: "demo",
+          age: 22,
+          mobile: "12355",
+        },
+      ];
+
+      console.log(arr[0].name);
+
+      arr.map((val, index) => {
+        console.log(val.age);
+      });
+
+      let min = 200;
+      let max = 500;
+
+      let product = [
+        {
+            id:1,
+          productName:
+            "Daikin 0.8 Ton 3 Star, Fixed Speed Split AC (Copper, PM 2.5 Filter, 2022 Model, FTL28U, White)",
+          price: 25990,
+          service: [1, 2, 34],
+          category: {
+            name: "electric",
+          },
+        },
+
+        {},
+      ];
+    </script>
+  </body>
+</html>

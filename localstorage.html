@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   console.log(localStorage);
+
+      //   localStorage.setItem("name", "garvit");
+      //   localStorage.setItem("age", 21);
+
+      //   localStorage.clear();
+
+      //   let name = localStorage.getItem("name");
+      //   let age = parseInt(localStorage.getItem("age"));
+
+      //   console.log(name, "from storage");
+      //   console.log(age);
+
+      let arr = [1, 2, 3, 4];
+
+      localStorage.setItem("data", JSON.stringify(arr));
+
+      let result = JSON.parse(localStorage.getItem("data"));
+      console.log(result);
+    </script>
+  </body>
+</html>
