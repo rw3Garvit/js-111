@@ -12,6 +12,16 @@
     <input type="text" id="pass" placeholder="pass" />
     <button onclick="register()">Register</button><br /><br />
 
+    <!-- modal -->
+    <input type="text" id="firstname" placeholder="fname" />
+    <input type="text" id="lastname" placeholder="lname" />
+    <input type="text" id="mail" placeholder="email" />
+    <input type="text" id="password" placeholder="pass" />
+    <input type="hidden" id="index" />
+    <button onclick="update()">Update</button>
+    <button onclick="register()">cancel</button>
+    <br /><br />
+
     <!-- view user -->
     <table border="1" cellpadding="10">
       <thead>
@@ -20,6 +30,7 @@
         <th>LastName</th>
         <th>Email</th>
         <th>Password</th>
+        <th>Remove</th>
       </thead>
       <tbody id="tbody">
         <!-- <tr>
@@ -70,13 +81,67 @@
           <td>${val.lastName}</td>
           <td>${val.email}</td>
           <td>${val.password}</td>
+          <td><button onclick="deleteUser(${index})">delete</button></td>
+             <td><button onclick="viewUser(${index})">View</button></td>
           `;
-
           tbody.appendChild(tr);
         });
       }
 
       loadUser();
+
+      //delete user
+      function deleteUser(index) {
+        console.log(index);
+        users.splice(index, 1);
+        console.log(users);
+        localStorage.setItem("users", JSON.stringify(users));
+        location.reload();
+
+        // let data = users[index];
+
+        // console.log(data);
+      }
+
+      //view user
+      function viewUser(index) {
+        let result = users[index];
+
+        console.log(result);
+        document.getElementById("firstname").value = result.firstName;
+        document.getElementById("lastname").value = result.lastName;
+        document.getElementById("mail").value = result.email;
+        document.getElementById("password").value = result.password;
+        document.getElementById("index").value = index;
+      }
+
+      //update user
+      function update() {
+        console.log("update");
+        let firstName = document.getElementById("firstname").value;
+        let lastName = document.getElementById("lastname").value;
+        let email = document.getElementById("mail").value;
+        let password = document.getElementById("password").value;
+
+        let index = parseInt(document.getElementById("index").value);
+
+        console.log(index);
+
+        let updatedUser = {
+          firstName,
+          lastName,
+          email,
+          password,
+        };
+
+        users.splice(index, 1, updatedUser);
+
+        console.log(users);
+
+        localStorage.setItem("users", JSON.stringify(users));
+
+        location.reload();
+      }
     </script>
   </body>
 </html>
