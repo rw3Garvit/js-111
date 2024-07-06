@@ -28,6 +28,7 @@
   </head>
   <body>
     <h1>User Dashboard</h1>
+    <button class="m-5"><a href="./cart.html">cart</a> <span>2</span></button>
 
     <div class="container">
       <div class="row col-md-12" id="row"></div>
@@ -35,40 +36,49 @@
 
     <script>
       let products = JSON.parse(localStorage.getItem("products"));
+      let filterproduct = products.filter((val) => val.isActive == true);
+
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
       let row = document.getElementById("row");
       console.log(products);
 
       function loadProduct() {
-        products
-          .filter((val) => val.isActive == true)
-          .map((val, index) => {
-            let div = document.createElement("div");
-            div.className = "col-md-3";
-
-            div.innerHTML = `
-          
-             <div class="card" style="width: 18rem">
-            <img class="card-img-top" src="${val.img}" alt="Card image cap" />
-            <div class="card-body">
-              <h5 class="card-title">${val.productName}</h5>
-              <p class="card-text">
-              ${val.price}
-              </p>
+        filterproduct.map((val, index) => {
+          let div = document.createElement("div");
+          div.className = "col-md-3";
+          div.innerHTML = `
+              <div class="card" style="width: 18rem">
+             <img class="card-img-top" src="${val.img}" alt="Card image cap" />
+             <div class="card-body">
+               <h5 class="card-title">${val.productName}</h5>
                <p class="card-text">
-              ${val.desc}
-              </p>
-              <a href="#" class="btn btn-primary">add to cart</a>
-            </div>
-          </div>
-          
-          
-          `;
-
-            row.appendChild(div);
-          });
+               ${val.price}
+               </p>
+                <p class="card-text">
+               ${val.desc}
+               </p>
+               <button href="#" class="btn btn-primary" onclick="addToCart(${index})" >add to cart</button>
+             </div>
+           </div>
+           `;
+          row.appendChild(div);
+        });
       }
 
       loadProduct();
+
+      let addToCart = (index) => {
+        console.log(index);
+
+        let result = filterproduct[index];
+
+        console.log(result);
+
+        cart.push(result);
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+      };
     </script>
   </body>
 </html>
