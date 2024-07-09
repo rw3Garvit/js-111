@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   class Bank {
+      //     deposite() {
+      //       console.log("deposite method called");
+      //     }
+      //     withdraw() {
+      //       console.log("wiithdrw methiod called");
+      //     }
+      //     checkBalance() {
+      //       console.log("balance checked called");
+      //     }
+      //   }
+
+      //   let p1 = new Bank();
+      //   p1.withdraw();
+
+      //   let p2 = new Bank();
+      //   p2.checkBalance();
+      //   p2.withdraw();
+
+      //   let p3 = new Bank();
+      //   p3.deposite();
+
+      class Bank {
+        constructor() {
+          this.name = "user";
+        }
+
+        createAccount() {
+          console.log(`Account created Successfully : ${this.name}`);
+        }
+      }
+
+      let p1 = new Bank();
+      console.log(p1);
+      //   p1.balance = 50000000;
+
+      //   p1.createAccount("User", 5000);
+      //   p1.deposite(10000);
+
+      //   let p2 = new Bank();
+      //   p2.createAccount("john", 7100);
+
+      //   let p3 = new Bank();
+      //   p3.createAccount("ram", 6000);
+    </script>
+  </body>
+</html>
