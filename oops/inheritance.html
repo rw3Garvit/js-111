@@ -7,50 +7,74 @@
   </head>
   <body>
     <script>
-      //   class Bank {
-      //     deposite() {
-      //       console.log("deposite method called");
-      //     }
-      //     withdraw() {
-      //       console.log("wiithdrw methiod called");
-      //     }
-      //     checkBalance() {
-      //       console.log("balance checked called");
-      //     }
-      //   }
 
-      //   let p1 = new Bank();
-      //   p1.withdraw();
+      class Car{
 
-      //   let p2 = new Bank();
-      //   p2.checkBalance();
-      //   p2.withdraw();
-
-      //   let p3 = new Bank();
-      //   p3.deposite();
-
-      class Bank {
-        constructor() {
-          this.name = "user";
+        constructor(name,model,price)
+        {
+          this.name = name
+          this.model = model
+          this.price=price
         }
 
-        createAccount() {
-          console.log(`Account created Successfully : ${this.name}`);
+        printCarDetail()
+        {
+      
+          console.log(`welcome ${this.name} and you purchased ${this.model} and ${this.price}`)
         }
+
+        purchase()
+        {
+          console.log(`Hello, you purchased ${this.model} and ${this.price}`)
+        }
+
+        gift()
+        {
+          console.log("Your gift value 20000");
+        }
+
       }
 
-      let p1 = new Bank();
-      console.log(p1);
-      //   p1.balance = 50000000;
 
-      //   p1.createAccount("User", 5000);
-      //   p1.deposite(10000);
+      class Insurance extends Car{
+        constructor(name,model,price,payment)
+        {
+          super(name,model,price)
+          this.payment = payment
+        }
 
-      //   let p2 = new Bank();
-      //   p2.createAccount("john", 7100);
+        printInsurance()
+        {
+          this.printCarDetail()
+          console.log(`Your policy no ${parseInt(Math.random()*10000)}  and your name is ${this.name} `);
+        }
 
-      //   let p3 = new Bank();
-      //   p3.createAccount("ram", 6000);
+        gift(name)
+        {
+          console.log(`your name is ${name} gift value is 5000`);
+        }
+
+        gift()
+        {
+          console.log("Your gift value 20");
+        }
+
+      }
+
+   
+
+      // let p1 =new Car('User','FS102',10000)
+      // p1.printCarDetail()
+      // p1.purchase()
+      // p1.gift()
+      
+
+      let p2 = new Insurance('User','FS102',10000,2000)
+      // p2.printInsurance()
+      // p2.printCarDetail()
+      p2.gift("user")
+      p2.gift()
+    
     </script>
   </body>
 </html>
