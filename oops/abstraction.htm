@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        function Student(name,age)
+        {
+            let id=parseInt(Math.random()*10000)
+            this.name=name
+            this.age=age
+            let grade ='A+'
+
+            let calculateResult=()=>{
+
+                console.log(`your grade is ${grade}`);
+            }
+
+            this.printDetail=()=>{
+
+                calculateResult()
+
+                console.log(`Hello, welcome ${this.name} your age is ${this.age} and your student id is ${id}`);
+            }
+        }
+
+
+        let s1 = new Student('user',21)
+     
+        s1.printDetail()
+   
+
+
+
+    </script>
+</body>
+</html>
