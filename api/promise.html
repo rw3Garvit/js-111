@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        let promise = new Promise((resolve,rejected)=>{
+          setTimeout(()=>{
+            resolve('my promise resolved')
+          },5000)
+            // rejected('promise rejected')
+        })
+
+        let pr = new Promise((resolve,rejected)=>{
+
+            resolve('hello world')
+
+        })
+
+        
+
+
+ 
+
+      async  function test()
+        {
+
+            let res = await pr
+            let result = await promise
+            console.log(res);
+            console.log(result);
+
+        }
+      
+
+        test()
+
+    </script>
+</body>
+</html>

@@ -62,16 +62,12 @@ return result
 
 
 let loadData =async ()=>{
-
-
         let photos = await getApi('https://jsonplaceholder.typicode.com/photos')
         console.log(photos);
-
         photos.map((val,index)=>{
             let div = document.createElement('div')
             div.className='col-md-3'
             div.innerHTML=`
-
                 <div class="card" style="width: 18rem;">
                 <img class="card-img-top" src="${val.url}" alt="Card image cap">
                 <div class="card-body">
@@ -80,12 +76,8 @@ let loadData =async ()=>{
                   <a href="#" class="btn btn-primary">Go somewhere</a>
                 </div>
               </div>
-            
-            
             `
-
             row.appendChild(div)
-
         })
 }
 
